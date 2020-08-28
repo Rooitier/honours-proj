@@ -1,0 +1,7 @@
+{
+    "python.pythonPath": "/usr/bin/python3",
+    "files.associations": {
+        "XRFMCA_JJ.C": "cpp",
+        "XRF_ATTEN_JJ.C": "cpp"
+    }
+}
