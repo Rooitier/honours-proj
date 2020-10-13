@@ -1,13 +1,15 @@
 import numpy as np
+from scipy.interpolate import InterpolatedUnivariateSpline
 import matplotlib.pyplot as plt
-import ROOT
+from array import array
+
+
 
 start = '<<DATA>>'
 end = '<<END>>'
 array = []
 
-f = ROOT.TF1("f1", "sin(x)/x", 0., 10.)
-f.Draw()
+
 
 # ***************************************************************************************
 # File preparation#
@@ -22,6 +24,23 @@ idx2 = array.index(end)
 array = array[idx1+1:idx2]
 array = [int(x) for x in array]
 
-plt.plot(array)
-plt.show()
+
+# ***************************************************************************************
+# Calculation#
+# ***************************************************************************************
+
+n = len(array)
+x = list(range(n))
+y = array
+
+
+
+
+aspline = InterpolatedUnivariateSpline(x,y,k=2)
+area = aspline.integral(769,848)
+print(area)
+#plt.plot(array)
+#plt.show()
+
+
 
