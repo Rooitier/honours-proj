@@ -39,8 +39,8 @@ y = array
 aspline = InterpolatedUnivariateSpline(x,y,k=2)
 area = aspline.integral(769,848)
 print(area)
-#plt.plot(array)
-#plt.show()
+plt.plot(array)
+plt.show()
 
 
 
